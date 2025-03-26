@@ -1,0 +1,193 @@
+body
+{
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+
+}
+.card {
+    background-color: #ffffff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Padding inside the card */
+    margin: 20px; /* Margin outside the card */
+    width: 90%; 
+    max-width: 300px;
+    height: 500px;  /*Maximum height of the card */
+    text-align: center; /* Center the text */
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+    display: block; /* Display the cards as a block element */
+    justify-self: center; /* Center the cards in the grid */
+    align-self: center; /* Center the cards in the grid */
+    margin-top: 7%; /* Add some space at the top */
+    background: #E0EAFC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.poster img
+{
+    width: 100% ; /* Width of the poster */
+    height: auto; /* Height of the poster */
+    border-radius: 10px; /* Rounded corners */
+    margin-bottom: 10px; /* Add some space at the bottom */
+    margin-top: 10px; /* Add some space at the top */
+    object-fit: contain;
+}
+.title
+{
+    font-size: 26px; /* Large font size */
+    font-weight: bold; /* Bold font weight */
+    margin-bottom: 8px; /* Add some space at the bottom */
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+}
+.artist
+{
+    font-size: 18px; /* Medium font size */
+    margin-bottom: 20px; /* Add some space at the bottom */
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    color:rgba(61, 61, 61, 0.5)
+}
+.controls
+{
+    display: flex; /* Display the controls as a flex containe r */
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px; 
+    gap: 15px;
+    width:100%;
+    align-items: center;
+}
+.previous i, .play i, .pause i, .next i {
+    font-size: 28px;
+    cursor: pointer;
+    transition: transform 0.2s; 
+    margin: 10px;
+    padding-inline: 10px;
+    align-self: flex-start;
+}
+.previous i:hover, .play i:hover, .pause i:hover, .next i:hover {
+    transform: scale(1.1);
+}
+.progress-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    gap: 10px;
+}
+
+#progressBar {
+    width: 100%;
+    height: 5px;
+    margin-bottom: 15px;
+    appearance: none;
+    background: #ccc;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+#progressBar::-webkit-slider-thumb {
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    background: #000;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#currentTime, #totalDuration {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    min-width: 40px;
+    text-align: center;
+    margin-top: -12px;
+}
+
+/* Playlist Toggle Button */
+.toggle-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.toggle-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Playlist Styling */
+.playlist {
+    position: absolute;
+    top: 0;
+    left: -100%;  /* Initially hidden */
+    width: 250px;
+    height: 100%;
+    background: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: left 0.5s ease-in-out;  /* Smooth slide animation */
+    overflow-y: auto;
+}
+
+/* Show Playlist */
+.playlist.active {
+    left: 0;  /* Slide in */
+}
+
+/* Back Button Inside Playlist */
+.back-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.back-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.playlist h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.playlist ul {
+    list-style: none;
+    padding: 0;
+}
+
+.playlist li {
+    padding: 10px;
+    border-radius: 5px;
+    background: #f1f1f1;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.playlist li:hover {
+    background: #dcdcdc;
+    transform: scale(1.05);
+}
+
